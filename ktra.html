@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="formstyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobilestore</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <img src="img/logo.jpg">
+                <p>CALL TOLL FREE 1-800-948-748</p>
+            </div>
+            <nav>
+                <ul class="services">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Market</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Promotion</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="main">
+            <div class="hotnews">
+                <div class="imgnews">
+                <img src="img/hotnews.jpg">
+                </div>
+                <div class="textnews">
+                    <div class="title">
+                        About PPC Lubricans
+                    </div>
+                    <div class="content">
+                        It is common to do entire web layouts using the CSS float property. 
+                        Float is easy to learn - you just need to remember how the float and clear properties work. Disadvantages:
+                    </div>
+                    <div class="cmt">
+                        <form action="">
+                            <label for="email">Email: </label> <br>
+                            <input type="email" id="email" name="email"> <br>
+                            <label for="comment">Comment: </label> <br>
+                            <textarea name="cmt" id="cmt" rows="5" cols="40"></textarea> <br>
+                            <label for="rate">Rate: </label>
+                            <input type="number" id="rate" name="rate" max="5" min="0"> <br>
+                            <button>Send</button>
+                        </form>
+                    </div>
+                </div>    
+            </div>
+            <div class="news">
+                <div class="item col-s-3 col-3">
+                    <div class="title">
+                        Automotive
+                    </div>
+                    <div class="forcontent">
+                        <div class="imgn">
+                            <img src="img/news_1.jpg">
+                        </div>
+                        <div class="content2">
+                            Standing on the River Thames, London has been a major settlement for two millennia
+                        </div>
+                    </div>
+                </div>
+                <div class="item col-s-3 col-3">
+                    <div class="title">
+                        Commercial
+                    </div>
+                    <div class="forcontent">
+                        <div class="imgn">
+                            <img src="img/news_2.jpg">
+                        </div>
+                        <div class="content2">
+                            Standing on the River Thames, London has been a major settlement for two millennia
+                        </div>
+                    </div>
+                </div>
+                <div class="item col-s-3 col-3">
+                    <div class="title">
+                        Industrial
+                    </div>
+                    <div class="forcontent">
+                        <div class="imgn">
+                            <img src="img/new_3.jpg">
+                        </div>
+                        <div class="content2">
+                            Standing on the River Thames, London has been a major settlement for two millennia
+                        </div>
+                    </div>
+                </div>
+                <div class="item col-s-3 col-3">
+                    <div class="title">
+                        Social
+                    </div>
+                    <div class="forcontent">
+                        <div class="imgn">
+                            <img src="img/new_4.jpg">
+                        </div>
+                        <div class="content2">
+                            Standing on the River Thames, London has been a major settlement for two millennia
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementsByTagName('form')
+    var form=this.forms[0];
+
+    form.addEventListener('submit', function(event) {
+        if (!isEmailValid()) {
+            alert("Vui lòng nhập một địa chỉ email hợp lệ.");
+            event.preventDefault();
+        }
+        if (!isCommentValid()) {
+            alert("Vui lòng nhập bình luận.");
+            event.preventDefault();
+        }
+        if (!isRatingValid()) {
+            alert("Vui lòng nhập đánh giá hợp lệ (từ 1 đến 5).");
+            event.preventDefault();
+        }
+    });
+
+    function isEmailValid() {
+        var email = document.getElementById('email').value;
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (email === "" || !emailPattern.test(email)) {
+            return false;
+        }
+        return true;
+    }
+
+    function isCommentValid() {
+        var comment = document.getElementById('com').value;
+        if (comment === "") {
+            return false;
+        }
+        return true;
+    }
+
+    function isRatingValid() {
+        var rating = document.getElementById('rate').value;
+        if (rating === "" || isNaN(rating) || rating < 1 || rating > 5) {
+            return false;
+        }
+        return true;
+    }
+});
+    </script>
+</body>
+</html>
