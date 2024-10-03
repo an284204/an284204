@@ -24,7 +24,7 @@ function loopImages() {
     }
 }
 
-setInterval(loopImages, 4000); // Tốc độ chạy: 5 giây
+setInterval(loopImages, 3000); // Tốc độ chạy: 5 giây
 
 
 // Tạo hiệu ứng trái tim rơi
