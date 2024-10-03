@@ -1,0 +1,122 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    padding: 50px;
+    z-index: 10;
+    position: relative;
+}
+
+@font-face {
+    font-family: 'Amsterdam One';
+    src: url('AmsterdamOne-eZ12l.ttf') format('truetype');
+}
+
+h1 {
+    font-family: 'Amsterdam One', sans-serif;
+    margin-bottom: 40px;
+}
+
+
+h2 {
+    text-shadow: 2px 2px 5px #000;
+    margin-top: 40px;
+}
+/* Container chứa hình ảnh */
+.moving-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.image-container {
+    display: flex;
+    width: calc(500%); /* Để đủ cho 20 ảnh */
+    animation: slide 15s linear infinite; /* 30s để chạy chậm hơn */
+}
+
+/* Mỗi ảnh sẽ chiếm 25% chiều rộng của container */
+.bg-image {
+    width: 25%;
+    height: 100vh;
+    object-fit: cover;
+    transition: transform 1s ease-in-out;
+}
+
+/* Keyframes cho hiệu ứng cuộn ảnh liên tục */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-400%); } /* Chạy liên tục sau khi hết 4 ảnh */
+}
+
+
+
+/* Hiệu ứng trái tim rơi */
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    transform: rotate(45deg);
+    animation: fall linear infinite;
+    opacity: 0.8;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: 10px;
+    top: 0;
+}
+
+/* Animation để rơi xuống với xoay */
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.heart:nth-child(1) {  animation-duration: 10s; left: 10%; }
+.heart:nth-child(2) {  animation-duration: 12s; left: 20%; }
+.heart:nth-child(3) { animation-duration: 14s; left: 30%; }
+.heart:nth-child(4) {  animation-duration: 15s; left: 40%; }
+.heart:nth-child(5) {  animation-duration: 13s; left: 50%; }
+
