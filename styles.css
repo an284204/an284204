@@ -42,7 +42,7 @@ h2 {
 .image-container {
     display: flex;
     width: calc(500%); /* Để đủ cho 20 ảnh */
-    animation: slide 30s linear infinite; /* 30s để chạy chậm hơn */
+    animation: slide 15s linear infinite; /* 30s để chạy chậm hơn */
 }
 
 /* Mỗi ảnh sẽ chiếm 25% chiều rộng của container */
