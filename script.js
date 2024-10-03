@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
             images.forEach(image => {
                 image.style.width = '50%'; // Mỗi ảnh chiếm 50% màn hình
             });
-            imageContainer.style.animationDuration = `${totalImages * 3}s`; // Cuộn nhanh hơn trên điện thoại (1.5s cho mỗi ảnh)
+            imageContainer.style.animationDuration = `${totalImages * 1.5}s`; // Cuộn nhanh hơn trên điện thoại (1.5s cho mỗi ảnh)
         }
         // Reset lại vị trí ban đầu của container để đảm bảo cuộn mượt
         imageContainer.style.transform = 'translateX(0)';
