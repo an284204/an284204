@@ -78,4 +78,9 @@ function createHeart() {
 
 // Tạo trái tim liên tục
 setInterval(createHeart, 300);
+if (window.location.search) {
+    const cleanUrl = window.location.origin + window.location.pathname;
+    window.history.replaceState(null, null, cleanUrl);
+}
+
 
